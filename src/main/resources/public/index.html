@@ -1,0 +1,108 @@
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--    <title>Hello jQuery</title>-->
+<!--        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
+<!--        <script src="hello.js"></script>-->
+<!--</head>-->
+
+<!--<body>-->
+<!--<div class="wrp">-->
+<!--&lt;!&ndash;    <p class="greeting-shit">KKK </p>&ndash;&gt;-->
+<!--&lt;!&ndash;    <img src="" class="cp" width="200"/>&ndash;&gt;-->
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->
+
+
+<!--<style>-->
+<!--    .wrp{-->
+<!--        display: flex;-->
+<!--    }-->
+<!--    .block{-->
+<!--        width: 200px;-->
+<!--        height: 100px;-->
+<!--        background-color: #ccc;-->
+<!--        margin: 20px;-->
+<!--    }-->
+<!--    .img{-->
+<!--        width: 100%;-->
+<!--    }-->
+<!--</style>-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="//api.bitrix24.com/api/v1/dev/"></script>
+    <script type="text/javascript" src="src/jquery-1.9.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="src/style.css">
+    <script type="text/javascript" src="src/main.js"></script>
+
+</head>
+<body class="app">
+    <div class="app__content app-content">
+
+        <header class="header">
+            <ul class="header__ul">
+                <li class="header__li">
+                    <a href="https://www.bitrix24.ru/apps/?partner_id=6223179&search=Y&PAGEN_1=2" class="header__link header__link_text" target="_blank">Приложения</a>
+                </li>
+                <li class="header__li">
+                    <a href="#" class="header__link header__link_text">Наш сайт</a>
+                </li>
+                <li class="header__li">
+                    <a href="#" class="header__link header__link_text">Гайд по установке</a>
+                </li>
+                <li class="header__li">
+                    <a href="#" class="header__link header__link_button b24-web-form-popup-btn-3">Связаться</a>
+                </li>
+            </ul>
+        </header>
+
+        <div class="aside">
+            <div class="main">
+                <p class="aside__title">Начнем!</p>
+                <div>
+                    <button class="button aside__button aside__button_select">Выбрать плагин</button>
+                    <button class="button button--blue aside__button aside__button_all">Установить все</button>
+                </div>
+                <div class="result"></div>
+            </div>
+            <div class="plugins plugins-hide">
+                <button href="#" class="button button--blue plugins-button plugins-hide">Вернуться</button>
+                <div class="plugins__content plugin">
+                </div>
+            </div>
+        </div>
+
+        <img src="./images/rocket.png" alt="" class="app-content__bg-img">
+
+    </div> 
+
+    <div class="fv-modal">
+        <div class="fv-modal__content">
+            <div class="modal__close">
+                <div class="leftright"></div>
+                <div class="rightleft"></div>
+            </div>
+            <h1 class="modal__title">Установите полную версию приложения</h1>
+            <h2 class="modal__text">В полной версии приложения доступен дополнительный функционал и более широкий спектр возможностей. О приложении можно почитать <a class="modal__link" href="#">здесь</a></h2>
+            <button class="modal-button button--blue">Установить</button>
+        </div>
+    </div>
+
+    <script id="bx24_form_button" data-skip-moving="true">
+            (function(w,d,u,b){w['Bitrix24FormObject']=b;w[b] = w[b] || function(){arguments[0].ref=u;
+                    (w[b].forms=w[b].forms||[]).push(arguments[0])};
+                    if(w[b]['forms']) return;
+                    var s=d.createElement('script');s.async=1;s.src=u+'?'+(1*new Date());
+                    var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
+            })(window,document,'https://b24-wnwp4c.bitrix24.ru/bitrix/js/crm/form_loader.js','b24form');
+            b24form({"id":"3","lang":"ru","sec":"q392xl","type":"button","click":""});
+    </script>
+
+</body>
+</html>
