@@ -8,7 +8,7 @@ public class MyDataFile {
     static public List<String> getData() throws IOException {
         String data;
         List<String> dataList = new ArrayList<>();
-        String path = "C:\\Spring\\demo\\src\\main\\resources\\dataFile";
+        String path = "C:\\Rocketman\\demo\\src\\main\\resources\\dataFile";
 
         BufferedReader reader = new BufferedReader(new FileReader(path));
 

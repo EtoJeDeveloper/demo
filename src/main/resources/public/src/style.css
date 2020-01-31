@@ -23,16 +23,20 @@ button{
     0%{
         opacity: 0;
         visibility: hidden;
-    }
-    100% {
-        opacity: 1;
-        visibility: visible;
-    }
+    },
+100% {
+    opacity: 1;
+    visibility: visible;
+}
 }
 .header{
     width: 100%;
     display: flex;
     justify-content: flex-end;
+    position: relative;
+    padding-bottom: 13px;
+    z-index: 2;
+    transition: 0.3s;
 }
 .header__ul{
     display: flex;
@@ -204,6 +208,12 @@ button{
     width: 50%;
     height: 60%;
 }
+.plugin-select{
+    background-color: #141B3A;
+}
+.plugin-select .header__link_text{
+    color: #fff;
+}
 .plugins{
     width: 100%;
     height: 100%;
@@ -213,21 +223,17 @@ button{
 .plugins-hide{
     display: none;
 }
-.plugins:before{
-    content: '';
-    width: 100%;
-    height: 2px;
-    margin-top: 13px;
-    background-color: #C22D2E;
-    position: absolute;
-}
 .plugins-button{
     padding: 15px 30px;
     font-size: 12px;
     left: 15px;
-    top: -49px;
-    display: block;
     position: absolute;
+    display: none;
+    margin-top: 15px;
+    background-color: #636777;
+}
+.plugins-button:hover,.plugins-button:focus{
+    background-color: #565967;
 }
 .plugin{
     display: flex;
@@ -261,7 +267,7 @@ button{
     position: absolute;
     padding: 20px;
     transition: 0.4s;
-    top: calc( 100% - 65px );
+    bottom: -55px;
 }
 .plugin-block__name{
     color: #fff;
@@ -276,13 +282,101 @@ button{
     padding-top: 7px;
     padding-bottom: 2px;
 }
-.plugin-block:hover .plugin-block__content{
-    background-color: #FFFFFFED;
-    top: calc( 100% - 142px );
+.plugin-block:hover .plugin-block__content,
+.plugin-block.clicked .plugin-block__content{
+    background-color: #FFFFFFEC;
+    bottom: 35px;
 }
-.plugin-block:hover .plugin-block__content .plugin-block__name{
+.plugin-block:hover .plugin-block__content .plugin-block__name,
+.plugin-block.clicked .plugin-block__content .plugin-block__name{
     color: #000;
 }
-.plugin-block:hover .plugin-block__content .plugin-block__describe{
+.plugin-block:hover .plugin-block__content .plugin-block__describe,
+.plugin-block.clicked .plugin-block__content .plugin-block__describe{
     opacity: 1;
+}
+.plugin-block__button-container{
+    display: none;
+    overflow: hidden;
+}
+.plugin-block__button{
+    background-color: #26bb52;
+    padding: 10px 30px;
+    margin-top: 15px;
+    float: right;
+    transition:
+}
+.plugin-block__button:hover{
+    background-color: #1f9e45;
+}
+.plugin-block.hide .plugin-block__content{
+    bottom: -300px;
+    transition: 1s;
+}
+.install{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #26bb52;
+    top: 0;
+    display: none;
+}
+.flex{
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+.process {
+    height: 100px;
+    width: 30px;
+}
+.process__bounce {
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+    background: #ecf0f1;
+    animation: bouncy 1.5s infinite ease-in-out;
+}
+@keyframes bouncy {
+    40% {
+        height: 30px;
+    }
+    50% {
+        transform: translate(0, 65px);
+        height: 25px;
+        border-radius: 20px;
+    }
+    65% {
+        height: 30px;
+    }
+}
+.done{
+    display: none;
+    width: 80px;
+    height: 60px;
+    position: relative;
+    transform: rotate(-45deg);
+    margin-top: -60px;
+}
+.done:after,.done:before{
+    background-color: #fff;
+    content: '';
+    position: absolute;
+    border-radius: 8px;
+    bottom: 0;
+}
+.done:after{
+    width: 80px;
+    height: 8px;
+}
+.done:before{
+    width: 8px;
+    height: 45px;
+}
+.install .name{
+    position: absolute;
+    color: #fff;
+    margin-top: 40px;
+    font-size: 20px;
+    display: none;
 }
